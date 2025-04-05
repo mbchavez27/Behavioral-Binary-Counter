@@ -1,50 +1,25 @@
-// Max Benedict Chavez, S16
-module odd_upordown_counter_tb;
-
-    reg clk, reset, UpOrDown;
-    wire [3:0] Count;
-    
-    // Instantiate the counter
-    odd_upordown_counter uut (
-        .Clk(clk),
-        .reset(reset),
-        .UpOrDown(UpOrDown),
-        .Count(Count)
-    );
-    
-    // Clock generation
-    always begin
-        #5 clk = ~clk; // Clock with 10 time unit period
-    end
-    
-    // Test stimulus
+module testbench;
+    reg clk, reset, Y;
+    wire [3:0] count;
+ 
+    odd_up_down_counter uut (.clk(clk), .reset(reset), .Y(Y), .count(count));
+ 
     initial begin
-        // Initialize signals
         clk = 0;
         reset = 0;
-        UpOrDown = 1;  // Start with Up mode
-        
-        // Reset counter
+        Y = 1;
         #10 reset = 1;
-        #10 reset = 0;
-        
-        // Count Up (odd numbers from 0001 to 1111)
-        #100 UpOrDown = 1;  // Up mode
-        
-        // Count Down (odd numbers from 1111 to 0001)
-        #100 UpOrDown = 0;  // Down mode
-        
-        // Finish the simulation
-        #50 $finish;
+        #100 Y = 0;
+        #100 $stop;
     end
-    
-    // Monitor the counter value
+
+    always #5 clk = ~clk;
+ 
     initial begin
-      $display("Written by Max Benedict Chavez using Behavioral Modelling");
-      $display("Odd Up Down Binary Counter");
-      $monitor("Time=%0t, Reset=%b, UpOrDown=%b, Count=%b", $time, reset, UpOrDown, Count);
-      $dumpfile("AGTKChaM.vcd"); //gtkwave
-      $dumpvars();
+         $display("Written by Max Benedict Chavez using Gate-Level Modelling");
+    $display("Model Type: Gate-Level Modeling");
+        $monitor("Time = %0t, reset = %b, Y = %b, count = %b", $time, reset, Y, count);
+    $dumpfile("RGTKChaM.vcd"); //gtkwave
+    $dumpvars();
     end
-    
 endmodule

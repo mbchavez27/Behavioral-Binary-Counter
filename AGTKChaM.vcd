@@ -1,5 +1,5 @@
 $date
-	Sun Apr  6 02:04:36 2025
+	Sun Apr  6 02:13:17 2025
 $end
 $version
 	Icarus Verilog
@@ -8,16 +8,15 @@ $timescale
 	1s
 $end
 $scope module odd_upordown_counter_tb $end
-$var wire 4 ! Count [3:0] $end
-$var reg 1 " UpOrDown $end
-$var reg 1 # clk $end
+$var wire 4 ! Q [3:0] $end
+$var reg 1 " Y $end
+$var reg 1 # clock $end
 $var reg 1 $ reset $end
 $scope module uut $end
-$var wire 1 # Clk $end
-$var wire 1 " UpOrDown $end
+$var wire 1 " Y $end
+$var wire 1 # clock $end
 $var wire 1 $ reset $end
-$var reg 4 % Count [3:0] $end
-$var integer 32 & i [31:0] $end
+$var reg 4 % Q [3:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -26,199 +25,84 @@ $dumpall
 $end
 #0
 $dumpvars
-bx &
-bx %
+b1 %
 0$
 0#
 1"
-bx !
+b1 !
 $end
+#3
+1$
 #5
-b111 &
+b11 !
+b11 %
 1#
-#10
+#8
 b1 !
 b1 %
+0$
+#10
 0#
-1$
 #15
 1#
 #20
 0#
-0$
 #25
-b11 !
-b11 %
-b111 &
 1#
 #30
 0#
 #35
-b101 !
-b101 %
-b111 &
 1#
 #40
 0#
 #45
-b111 !
-b111 %
-b111 &
 1#
 #50
 0#
 #55
-b1001 !
-b1001 %
-b111 &
 1#
 #60
 0#
 #65
-b1011 !
-b1011 %
-b111 &
 1#
+#68
+0"
 #70
 0#
 #75
-b1101 !
-b1101 %
-b111 &
 1#
 #80
 0#
 #85
-b1111 !
-b1111 %
-b111 &
 1#
 #90
 0#
 #95
-b1 !
-b1 %
-b111 &
 1#
 #100
 0#
 #105
-b11 !
-b11 %
-b111 &
 1#
 #110
 0#
 #115
-b101 !
-b101 %
-b111 &
 1#
+#118
+1"
 #120
 0#
 #125
-b111 !
-b111 %
-b111 &
 1#
 #130
 0#
 #135
-b1001 !
-b1001 %
-b111 &
 1#
 #140
 0#
 #145
-b1011 !
-b1011 %
-b111 &
 1#
 #150
 0#
 #155
-b1101 !
-b1101 %
-b111 &
 1#
-#160
-0#
-#165
-b1111 !
-b1111 %
-b111 &
-1#
-#170
-0#
-#175
-b1 !
-b1 %
-b111 &
-1#
-#180
-0#
-#185
-b11 !
-b11 %
-b111 &
-1#
-#190
-0#
-#195
-b101 !
-b101 %
-b111 &
-1#
-#200
-0#
-#205
-b111 !
-b111 %
-b111 &
-1#
-#210
-0#
-#215
-b1001 !
-b1001 %
-b111 &
-1#
-#220
-0#
-0"
-#225
-b111 !
-b111 %
-b1000 &
-1#
-#230
-0#
-#235
-b101 !
-b101 %
-b1000 &
-1#
-#240
-0#
-#245
-b11 !
-b11 %
-b1000 &
-1#
-#250
-0#
-#255
-b1 !
-b1 %
-b1000 &
-1#
-#260
-0#
-#265
-b1111 !
-b1111 %
-b1000 &
-1#
-#270
-0#
+#158
